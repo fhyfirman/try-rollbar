@@ -6,3 +6,4 @@ gem 'dotenv'
 gem 'rollbar'
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
+gem 'sidekiq-scheduler'
