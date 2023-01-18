@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rollbar'
 require 'dotenv'
 
@@ -9,13 +11,13 @@ Rollbar.configure do |config|
   # Other Configuration Settings
 end
 
-Rollbar.error("Running Script")
+Rollbar.error('Running Script')
 
 begin
   unknown_run_script ARGV
-rescue Exception => e # Never rescue Exception *unless* you re-raise in rescue body
+rescue StandardError => e # Never rescue Exception *unless* you re-raise in rescue body
   Rollbar.error(e)
   raise e
 end
 
-Rollbar.info("Script ran successfully")
+Rollbar.info('Script ran successfully')
